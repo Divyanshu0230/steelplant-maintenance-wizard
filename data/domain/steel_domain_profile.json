@@ -1,0 +1,316 @@
+{
+  "version": 1,
+  "model_type": "steel_maintenance_domain_adapter",
+  "description": "Domain-adapted steel maintenance expert layer \u2014 C-MAPSS degradation patterns, operational fault codes, ISO 10816 vibration zones, and engineer feedback weights.",
+  "trained_at": "2026-06-15T03:24:46.664814+00:00",
+  "training_sources": [
+    "NASA C-MAPSS (RUL + anomaly models)",
+    "data/operational/fault_codes.csv",
+    "data/operational/fault_messages.csv",
+    "data/operational/delay_logs.csv",
+    "feedback_learnings.json",
+    "fault_codes.csv",
+    "diagnosis_ratings"
+  ],
+  "domain_vocabulary": [
+    "above",
+    "alignment",
+    "axis",
+    "bearing",
+    "below",
+    "belt",
+    "beyond",
+    "blast furnace blower",
+    "blower",
+    "brake",
+    "conveyor",
+    "cooling pump",
+    "detected",
+    "deviation",
+    "discharge",
+    "drift",
+    "drive",
+    "dropout",
+    "encoder",
+    "exceeded",
+    "excessive",
+    "flow",
+    "from",
+    "hoist",
+    "hydraulic",
+    "leak",
+    "limit",
+    "lubrication",
+    "mass",
+    "mechanical"
+  ],
+  "sensor_thresholds": {
+    "vibration_iso_zone_c": 7.1,
+    "vibration_iso_zone_d": 11.2,
+    "temperature_warning_c": 75,
+    "temperature_critical_c": 90,
+    "pressure_low_bar": 2.5,
+    "motor_current_high_a": 45
+  },
+  "fault_patterns": [
+    {
+      "fault_code": "F-VIB-03",
+      "equipment_types": [
+        "rolling_mill_motor",
+        "general"
+      ],
+      "keywords": [
+        "excessive",
+        "vibration",
+        "bearing",
+        "wear",
+        "suspected"
+      ],
+      "sensor_rules": {
+        "vibration": {
+          "min": 7.1
+        }
+      },
+      "cause": "Excessive vibration \u2014 bearing wear suspected",
+      "confidence_base": 0.85,
+      "evidence": "Operational fault code F-VIB-03",
+      "action": "Inspect bearing and lubrication within 24h",
+      "priority": "critical",
+      "timeframe": "24 hours"
+    },
+    {
+      "fault_code": "F-TEMP-01",
+      "equipment_types": [
+        "rolling_mill_motor",
+        "general"
+      ],
+      "keywords": [
+        "motor",
+        "winding",
+        "temperature",
+        "above",
+        "limit"
+      ],
+      "sensor_rules": {
+        "temperature": {
+          "min": 75
+        }
+      },
+      "cause": "Motor winding temperature above SOP limit",
+      "confidence_base": 0.72,
+      "evidence": "Operational fault code F-TEMP-01",
+      "action": "Reduce load and check cooling airflow",
+      "priority": "high",
+      "timeframe": "Next shift"
+    },
+    {
+      "fault_code": "F-LUB-07",
+      "equipment_types": [
+        "rolling_mill_motor",
+        "general"
+      ],
+      "keywords": [
+        "lubrication",
+        "pressure",
+        "below",
+        "minimum"
+      ],
+      "sensor_rules": {
+        "pressure": {
+          "max": 2.5
+        }
+      },
+      "cause": "Lubrication pressure below minimum",
+      "confidence_base": 0.72,
+      "evidence": "Operational fault code F-LUB-07",
+      "action": "Check lube pump and filter blockage",
+      "priority": "high",
+      "timeframe": "Next shift"
+    },
+    {
+      "fault_code": "F-SPD-02",
+      "equipment_types": [
+        "blast_furnace_blower",
+        "general"
+      ],
+      "keywords": [
+        "blower",
+        "outlet",
+        "pressure",
+        "surge",
+        "detected"
+      ],
+      "sensor_rules": {
+        "pressure": {
+          "min": 8.0
+        }
+      },
+      "cause": "Blower outlet pressure surge detected",
+      "confidence_base": 0.72,
+      "evidence": "Operational fault code F-SPD-02",
+      "action": "Inspect impeller and inlet guide vanes",
+      "priority": "high",
+      "timeframe": "Next shift"
+    },
+    {
+      "fault_code": "F-FLW-11",
+      "equipment_types": [
+        "blast_furnace_blower",
+        "general"
+      ],
+      "keywords": [
+        "mass",
+        "flow",
+        "deviation",
+        "from",
+        "setpoint"
+      ],
+      "sensor_rules": {},
+      "cause": "Mass flow deviation from setpoint",
+      "confidence_base": 0.72,
+      "evidence": "Operational fault code F-FLW-11",
+      "action": "Verify damper position and sensor calibration",
+      "priority": "medium",
+      "timeframe": "Next shift"
+    },
+    {
+      "fault_code": "F-BRK-04",
+      "equipment_types": [
+        "overhead_crane",
+        "general"
+      ],
+      "keywords": [
+        "hoist",
+        "brake",
+        "response",
+        "time",
+        "exceeded"
+      ],
+      "sensor_rules": {},
+      "cause": "Hoist brake response time exceeded",
+      "confidence_base": 0.85,
+      "evidence": "Operational fault code F-BRK-04",
+      "action": "Lock crane for brake inspection before next lift",
+      "priority": "critical",
+      "timeframe": "24 hours"
+    },
+    {
+      "fault_code": "F-ENC-09",
+      "equipment_types": [
+        "overhead_crane",
+        "general"
+      ],
+      "keywords": [
+        "encoder",
+        "signal",
+        "dropout",
+        "hoist",
+        "axis"
+      ],
+      "sensor_rules": {},
+      "cause": "Encoder signal dropout on hoist axis",
+      "confidence_base": 0.72,
+      "evidence": "Operational fault code F-ENC-09",
+      "action": "Inspect cable chain and encoder coupling",
+      "priority": "medium",
+      "timeframe": "Next shift"
+    },
+    {
+      "fault_code": "F-BLT-06",
+      "equipment_types": [
+        "conveyor_system",
+        "general"
+      ],
+      "keywords": [
+        "belt",
+        "drift",
+        "beyond",
+        "alignment",
+        "tolerance"
+      ],
+      "sensor_rules": {},
+      "cause": "Belt drift beyond alignment tolerance",
+      "confidence_base": 0.72,
+      "evidence": "Operational fault code F-BLT-06",
+      "action": "Adjust tracking rollers and tension",
+      "priority": "medium",
+      "timeframe": "Next shift"
+    },
+    {
+      "fault_code": "F-THM-08",
+      "equipment_types": [
+        "conveyor_system",
+        "general"
+      ],
+      "keywords": [
+        "drive",
+        "motor",
+        "thermal",
+        "overload",
+        "warning"
+      ],
+      "sensor_rules": {},
+      "cause": "Drive motor thermal overload warning",
+      "confidence_base": 0.72,
+      "evidence": "Operational fault code F-THM-08",
+      "action": "Check belt load and motor ventilation",
+      "priority": "high",
+      "timeframe": "Next shift"
+    },
+    {
+      "fault_code": "F-SEL-05",
+      "equipment_types": [
+        "cooling_pump",
+        "general"
+      ],
+      "keywords": [
+        "mechanical",
+        "seal",
+        "leak",
+        "detected"
+      ],
+      "sensor_rules": {
+        "pressure": {
+          "max": 3.0
+        }
+      },
+      "cause": "Mechanical seal leak detected",
+      "confidence_base": 0.72,
+      "evidence": "Operational fault code F-SEL-05",
+      "action": "Schedule seal kit replacement",
+      "priority": "high",
+      "timeframe": "Next shift"
+    },
+    {
+      "fault_code": "F-PRS-10",
+      "equipment_types": [
+        "cooling_pump",
+        "general"
+      ],
+      "keywords": [
+        "discharge",
+        "pressure",
+        "below",
+        "minimum"
+      ],
+      "sensor_rules": {},
+      "cause": "Discharge pressure below minimum",
+      "confidence_base": 0.72,
+      "evidence": "Operational fault code F-PRS-10",
+      "action": "Verify suction strainer and valve position",
+      "priority": "medium",
+      "timeframe": "Next shift"
+    }
+  ],
+  "feedback_boosts": {
+    "F-VIB-03": 0.05,
+    "F-SEL-05": 0.05,
+    "F-TEMP-01": 0.05,
+    "F-THM-08": 0.05
+  },
+  "stats": {
+    "fault_patterns_loaded": 11,
+    "feedback_entries_applied": 4,
+    "last_retrain": "2026-06-15T03:24:46.664814+00:00"
+  }
+}

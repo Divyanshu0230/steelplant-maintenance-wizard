@@ -1,0 +1,10 @@
+{
+  "global": {
+    "corrections": [],
+    "confirmed_causes": [
+      "## Summary\nOH-CRANE-02 is experiencing a critical anomaly with extreme vibration (1583.12) and significantly elevated temperature (710.84). This combination strongly indicates severe mechanical failur",
+      "Hello there! SteelPlant Maintenance Wizard at your service. How can I assist you with RM-MOTOR-03 today?"
+    ],
+    "rejected_causes": []
+  }
+}

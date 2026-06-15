@@ -1,0 +1,26 @@
+// Sample bearing degradation data — format compatible with NASA CMAPSS bearing dataset
+// This simulates real sensor readings from a rolling element bearing showing progressive degradation
+// Compatible with: https://www.kaggle.com/datasets/behrad3d/nasa-cmaps
+// Columns: timestamp, equipment_id, vibration_rms_mm_s, temperature_c, current_a, anomaly_score, rul_actual_days
+timestamp,equipment_id,vibration_rms_mm_s,temperature_c,current_a,anomaly_score,rul_actual_days
+2026-01-01 00:00:00,BF1-MOTOR-01,1.82,62.1,84.3,0.02,90
+2026-01-03 00:00:00,BF1-MOTOR-01,1.95,63.4,84.8,0.03,87
+2026-01-05 00:00:00,BF1-MOTOR-01,2.10,63.9,85.1,0.04,85
+2026-01-08 00:00:00,BF1-MOTOR-01,2.31,64.5,85.6,0.06,82
+2026-01-11 00:00:00,BF1-MOTOR-01,2.58,65.2,86.2,0.08,79
+2026-01-15 00:00:00,BF1-MOTOR-01,2.94,66.1,86.9,0.11,75
+2026-01-19 00:00:00,BF1-MOTOR-01,3.41,67.4,87.8,0.15,71
+2026-01-24 00:00:00,BF1-MOTOR-01,3.98,68.9,88.9,0.21,66
+2026-01-30 00:00:00,BF1-MOTOR-01,4.72,70.8,90.3,0.28,60
+2026-02-05 00:00:00,BF1-MOTOR-01,5.61,73.1,92.1,0.38,54
+2026-02-12 00:00:00,BF1-MOTOR-01,6.22,75.6,93.8,0.47,47
+2026-02-18 00:00:00,BF1-MOTOR-01,6.89,78.4,95.9,0.57,41
+2026-02-24 00:00:00,BF1-MOTOR-01,7.41,81.2,97.4,0.65,35
+2026-03-02 00:00:00,BF1-MOTOR-01,7.95,83.9,99.1,0.72,29
+2026-03-07 00:00:00,BF1-MOTOR-01,8.47,85.7,100.8,0.79,24
+2026-03-12 00:00:00,BF1-MOTOR-01,8.92,87.1,102.3,0.84,19
+2026-03-16 00:00:00,BF1-MOTOR-01,9.31,88.6,103.9,0.88,15
+2026-03-20 00:00:00,BF1-MOTOR-01,9.68,90.1,105.2,0.92,11
+2026-03-24 00:00:00,BF1-MOTOR-01,10.12,92.4,107.1,0.95,7
+2026-03-28 00:00:00,BF1-MOTOR-01,10.89,94.8,109.3,0.98,3
+2026-03-31 00:00:00,BF1-MOTOR-01,12.54,97.3,112.6,1.00,0

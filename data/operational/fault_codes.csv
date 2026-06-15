@@ -1,0 +1,12 @@
+fault_code,equipment_type,description,severity,recommended_action
+F-VIB-03,rolling_mill_motor,Excessive vibration — bearing wear suspected,critical,Inspect bearing and lubrication within 24h
+F-TEMP-01,rolling_mill_motor,Motor winding temperature above SOP limit,high,Reduce load and check cooling airflow
+F-LUB-07,rolling_mill_motor,Lubrication pressure below minimum,high,Check lube pump and filter blockage
+F-SPD-02,blast_furnace_blower,Blower outlet pressure surge detected,high,Inspect impeller and inlet guide vanes
+F-FLW-11,blast_furnace_blower,Mass flow deviation from setpoint,medium,Verify damper position and sensor calibration
+F-BRK-04,overhead_crane,Hoist brake response time exceeded,critical,Lock crane for brake inspection before next lift
+F-ENC-09,overhead_crane,Encoder signal dropout on hoist axis,medium,Inspect cable chain and encoder coupling
+F-BLT-06,conveyor_system,Belt drift beyond alignment tolerance,medium,Adjust tracking rollers and tension
+F-THM-08,conveyor_system,Drive motor thermal overload warning,high,Check belt load and motor ventilation
+F-SEL-05,cooling_pump,Mechanical seal leak detected,high,Schedule seal kit replacement
+F-PRS-10,cooling_pump,Discharge pressure below minimum,medium,Verify suction strainer and valve position

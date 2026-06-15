@@ -1,0 +1,55 @@
+{
+  "description": "Sample diagnosis requests for Maintenance Wizard API",
+  "endpoint": "POST /api/v1/diagnosis/",
+  "examples": [
+    {
+      "name": "Bearing Failure Investigation",
+      "payload": {
+        "equipment_id": "<equipment_id>",
+        "query": "Equipment has been showing increasing vibration over the past 2 weeks. Latest reading is 8.7 mm/s. Unusual grinding noise audible from bearing housing.",
+        "sensor_data": {
+          "vibration_mm_s": 8.7,
+          "temperature_c": 84.0,
+          "current_a": 98.0
+        },
+        "fault_description": "E003 - Vibration High Alarm",
+        "include_rul": true,
+        "include_spare_parts": true
+      }
+    },
+    {
+      "name": "Motor Overheating",
+      "payload": {
+        "equipment_id": "<equipment_id>",
+        "query": "Main drive motor temperature has risen from normal 65°C to 92°C over 3 days. Cooling fan appears to be running.",
+        "sensor_data": {
+          "temperature_c": 92.0,
+          "vibration_mm_s": 3.2,
+          "current_a": 112.0
+        },
+        "fault_description": "E031 - Temperature High Alarm"
+      }
+    },
+    {
+      "name": "Hydraulic Pressure Drop",
+      "payload": {
+        "equipment_id": "<equipment_id>",
+        "query": "Hydraulic pressure dropping gradually. Started at 280 bar, now at 190 bar. No visible leaks detected externally.",
+        "sensor_data": {
+          "pressure_bar": 190.0,
+          "oil_temperature_c": 72.0,
+          "oil_level_pct": 78.0
+        },
+        "fault_description": "E010 - Hydraulic Pressure Deviation"
+      }
+    },
+    {
+      "name": "Predict Remaining Useful Life",
+      "payload": {
+        "equipment_id": "<equipment_id>",
+        "query": "Estimate remaining useful life for this equipment based on current sensor trends and maintenance history.",
+        "include_rul": true
+      }
+    }
+  ]
+}

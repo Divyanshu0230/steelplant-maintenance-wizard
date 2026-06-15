@@ -1,0 +1,95 @@
+EQUIPMENT MANUAL — BLAST FURNACE MAIN DRIVE MOTOR
+Manufacturer: Siemens | Model: 1LA8-2452 | Plant: BF-1 Casthouse
+
+=== SPECIFICATIONS ===
+Rated Power: 450 kW
+Rated Voltage: 6600 V
+Rated Speed: 1480 RPM
+Rated Current: 47.5 A
+Insulation Class: F
+Protection Class: IP55
+Bearing Type: 6316 (Drive End), 6314 (Non-Drive End)
+Lubrication: Shell Alvania R3 Grease
+
+=== OPERATING THRESHOLDS ===
+Winding Temperature Max: 120 deg C (Class F limit)
+Bearing Temperature Max: 95 deg C
+Vibration Warning: 4.5 mm/s (ISO 10816 Class III)
+Vibration Alarm: 11.2 mm/s
+Vibration Trip: 18.0 mm/s
+Current Imbalance Max: 5%
+
+=== MAINTENANCE SCHEDULE ===
+Daily:
+- Visual inspection for abnormal noise or vibration
+- Check bearing temperature via thermocouple reading
+- Verify cooling fan operation
+
+Weekly:
+- Clean motor surface and cooling fins
+- Check terminal box for moisture ingress
+- Verify earth connection integrity
+
+Monthly:
+- Lubricate drive-end bearing: 25g Shell Alvania R3
+- Lubricate non-drive-end bearing: 15g Shell Alvania R3
+- Megger insulation resistance test (min 100 MOhm at 1kV)
+- Check coupling alignment (max 0.1mm offset)
+
+Quarterly:
+- Full vibration spectrum analysis
+- Oil sample from gearbox if coupled
+- Check and tighten all terminal connections
+- Thermal imaging of windings and connections
+
+Annual Overhaul:
+- Remove and inspect bearings — replace if >50% wear
+- Clean and re-varnish windings if insulation resistance <50 MOhm
+- Replace shaft seals
+- Calibrate all thermocouples and PT100 sensors
+
+=== FAULT CODES AND DIAGNOSIS ===
+E001 — Motor Overcurrent
+Probable causes:
+1. Mechanical overload (process jam or excessive friction)
+2. Phase-to-phase short circuit in winding
+3. Single phasing (one phase open)
+4. Cooling failure causing thermal overload
+Action: Check load, verify all three phases, inspect cooling system
+
+E003 — Vibration High Alarm
+Probable causes:
+1. Bearing wear or damage
+2. Shaft misalignment
+3. Rotor imbalance
+4. Loose mounting bolts
+Action: Perform vibration spectrum analysis, check coupling alignment
+
+E031 — Temperature High Alarm
+Probable causes:
+1. Ambient temperature too high (>45 deg C)
+2. Cooling fan failure or blocked air inlet
+3. Overload condition
+4. Bearing failure generating heat
+Action: Check cooling system, reduce load, inspect bearings
+
+=== BEARING REPLACEMENT PROCEDURE ===
+1. Isolate motor from supply and lock out/tag out
+2. Allow motor to cool to ambient temperature
+3. Remove coupling guard and coupling
+4. Remove end shield bolts and carefully remove end shield
+5. Use bearing puller to remove old bearing — do not use heat on motor frame
+6. Clean bearing housing and shaft with lint-free cloth
+7. Heat new bearing to 80-90 deg C in oil bath
+8. Fit bearing using correct size driver — do not strike outer race
+9. Apply prescribed grease quantity to housing (see schedule above)
+10. Reassemble in reverse order
+11. Run motor uncoupled for 30 minutes and check temperature and vibration
+12. Record work in maintenance logbook with bearing serial numbers
+
+=== LUBRICATION NOTES ===
+- Over-greasing is as harmful as under-greasing — follow quantities strictly
+- Do not mix grease types — purge old grease completely when changing type
+- Greasing interval formula: T = 14,000,000 / (n x sqrt(d)) hours
+  where n = speed RPM, d = bearing bore mm
+  For this motor: T = 14,000,000 / (1480 x sqrt(70)) = 1130 hours (approx. 6 weeks)

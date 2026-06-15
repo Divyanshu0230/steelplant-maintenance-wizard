@@ -1,0 +1,10 @@
+equipment_code,fault_code,message,severity,logged_at,source,is_active
+RM-MOTOR-03,F-VIB-03,SCADA: Vibration 7.2 mm/s exceeds SOP limit 5.5 mm/s,critical,2025-06-10T13:45:00,SCADA,true
+RM-MOTOR-03,F-LUB-07,DCS: Lube line pressure 0.42 MPa below 0.55 MPa minimum,high,2025-06-10T12:10:00,DCS,true
+BF-BLOWER-01,F-SPD-02,SCADA: Outlet pressure spike +12% from baseline,high,2025-06-10T11:30:00,SCADA,true
+BF-BLOWER-01,F-FLW-11,DCS: Mass flow deviation 8% from setpoint,medium,2025-06-09T18:00:00,DCS,false
+CV-SYSTEM-12,F-BLT-06,SCADA: Belt drift 45mm east of centerline,medium,2025-06-10T08:15:00,SCADA,true
+CV-SYSTEM-12,F-THM-08,DCS: Drive motor temp 88°C approaching trip,high,2025-06-10T07:50:00,DCS,true
+OH-CRANE-02,F-ENC-09,PLC: Hoist encoder dropout 3 events in 10 min,medium,2025-06-10T06:20:00,PLC,true
+BF-PUMP-05,F-SEL-05,SCADA: Seal leak sensor active — flow to drain detected,high,2025-06-10T05:00:00,SCADA,true
+BF-PUMP-05,F-PRS-10,DCS: Discharge pressure 0.31 MPa below 0.38 MPa,medium,2025-06-09T22:30:00,DCS,true

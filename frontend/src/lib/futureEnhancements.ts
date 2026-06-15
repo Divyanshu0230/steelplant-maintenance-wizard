@@ -1,0 +1,17 @@
+export const FUTURE_ENHANCEMENTS = [
+  "Live Tata SCADA / MES integration",
+  "Enterprise user directory (LDAP / SSO)",
+  "Role-based access with clerk validation workflow",
+  "Multi-plant tenant support",
+  "Mobile app for field engineers",
+  "Offline-first logbook on shop floor tablets",
+  "Digital twin 3D equipment visualization",
+  "Automated work order sync with SAP PM",
+  "Vendor portal for spare procurement",
+  "Historical trend warehouse (time-series DB)",
+  "Custom alert rules per equipment class",
+  "Multi-language operator interface",
+  "Audit trail & compliance reporting",
+  "Edge ML inference on plant gateways",
+  "Executive BI dashboard export",
+] as const;

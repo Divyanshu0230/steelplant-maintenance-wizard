@@ -1,0 +1,78 @@
+# Ccm Segment Bearing Sop
+
+STANDARD OPERATING PROCEDURE — CCM SEGMENT ROLL BEARING MAINTENANCE
+Document No: SMS-SOP-CCM-047 | Revision: 3 | Plant: Steel Melting Shop
+
+=== PURPOSE ===
+This SOP defines the procedure for inspection, maintenance, and replacement of segment roll
+bearings on the Continuous Casting Machine (CCM) to ensure consistent casting quality and
+prevent unplanned stoppages.
+
+=== APPLICABLE EQUIPMENT ===
+- CCM Strand 1, 2, 3 — All segment rolls (Segments 1 through 14)
+- Bearing type: SKF 23280 CA/W33 (Main rolls), SKF 22220 (Guide rolls)
+
+=== FREQUENCY ===
+- Condition monitoring: Every cast (automated via vibration sensors)
+- Visual inspection: Every 500 tonnes cast
+- Lubrication: Every 8 hours continuous casting
+- Full bearing replacement: At P-F interval trigger OR every 2000 tonnes (whichever first)
+
+=== ALARM THRESHOLDS ===
+Vibration (RMS):
+- Normal: Below 4.0 mm/s
+- Warning: 4.0 to 7.0 mm/s — increase monitoring frequency
+- Alarm: 7.0 to 10.0 mm/s — plan replacement at next opportunity
+- Critical: Above 10.0 mm/s — replace before next cast
+
+Bearing Temperature:
+- Normal: 40 to 70 deg C
+- Warning: 70 to 85 deg C
+- Alarm: 85 to 95 deg C — immediate lubrication and inspection
+- Critical: Above 95 deg C — stop strand, replace bearing
+
+=== LUBRICATION PROCEDURE ===
+Lubricant: Mobilith SHC 460 (high-temperature EP grease)
+1. Ensure segment is accessible (use safe access platform)
+2. Clean grease nipple with clean cloth before connecting grease gun
+3. Apply 30g per bearing point using calibrated grease gun
+4. Pump slowly — excessive pressure indicates blocked line or over-full bearing
+5. Operate strand for 5 minutes after lubrication to distribute grease
+6. Record lubrication in digital logbook: date, time, tonnage, technician
+
+=== BEARING REPLACEMENT PROCEDURE ===
+Prerequisites:
+- Cast must be completed and dummy bar removed
+- Segment must be removed to workshop (do not replace in-situ)
+- Ensure replacement bearings are pre-inspected and available
+
+Steps:
+1. Raise work order in maintenance system
+2. Coordinate with production for segment extraction window (minimum 4 hours)
+3. Extract segment using overhead crane — use approved lifting tackle only
+4. Transport to segment workshop on dedicated transport car
+5. Disassemble roll from segment frame using hydraulic press
+6. Remove old bearings using bearing puller — record condition
+7. Inspect roll surface for cracks, gouging, or out-of-roundness (max 0.3mm)
+8. Clean bearing housing — remove all old lubricant
+9. Heat new bearing to 90 deg C using induction heater (not open flame)
+10. Install bearing — ensure correct orientation (sealed face toward process)
+11. Fill housing with fresh Mobilith SHC 460 — 80% fill, not 100%
+12. Reassemble roll into segment, verify gap settings (tolerance +/- 0.2mm)
+13. Pressure test cooling water circuit (6 bar, 10 minutes, no leaks)
+14. Return segment to machine, reconnect all services
+15. Perform alignment check — verify roll parallelism within 0.3mm
+16. Run water test before first cast — check for leaks at all connections
+17. Update equipment history in maintenance system
+
+=== QUALITY CHECKS AFTER REPLACEMENT ===
+- First slab surface inspection — check for oscillation marks within specification
+- Verify no slab bulging (indicates incorrect roll gap)
+- Monitor bearing temperature for first 3 casts
+- Vibration reading must be below 3.0 mm/s at steady state casting speed
+
+=== CRITICAL SAFETY POINTS ===
+- Never work under suspended load
+- Segment weight: 8.5 tonnes — always use crane, never manual lifting
+- Cooling water pressure must be zero before disconnecting hoses
+- Hot segment surfaces — allow 2 hours cooling before handling

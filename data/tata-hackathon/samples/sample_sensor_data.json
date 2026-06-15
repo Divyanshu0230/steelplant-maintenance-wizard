@@ -1,0 +1,42 @@
+{
+  "description": "Sample sensor data payload for Maintenance Wizard API testing",
+  "endpoint": "POST /api/v1/sensors/ingest",
+  "examples": [
+    {
+      "name": "Normal Operating Conditions",
+      "payload": {
+        "equipment_id": "<paste_equipment_id_here>",
+        "readings": [
+          {"sensor_type": "vibration_mm_s", "value": 2.3, "unit": "mm/s", "threshold_min": 0, "threshold_max": 7.1},
+          {"sensor_type": "temperature_c", "value": 65.0, "unit": "°C", "threshold_min": 0, "threshold_max": 85},
+          {"sensor_type": "current_a", "value": 85.0, "unit": "A", "threshold_min": 10, "threshold_max": 120},
+          {"sensor_type": "oil_pressure_bar", "value": 4.2, "unit": "bar", "threshold_min": 2.5, "threshold_max": 7.0}
+        ]
+      }
+    },
+    {
+      "name": "High Vibration Warning Scenario",
+      "payload": {
+        "equipment_id": "<paste_equipment_id_here>",
+        "readings": [
+          {"sensor_type": "vibration_mm_s", "value": 8.7, "unit": "mm/s", "threshold_min": 0, "threshold_max": 7.1},
+          {"sensor_type": "temperature_c", "value": 82.0, "unit": "°C", "threshold_min": 0, "threshold_max": 85},
+          {"sensor_type": "current_a", "value": 105.0, "unit": "A", "threshold_min": 10, "threshold_max": 120}
+        ]
+      },
+      "expected": "Should trigger HIGH vibration alert"
+    },
+    {
+      "name": "Critical Failure Imminent",
+      "payload": {
+        "equipment_id": "<paste_equipment_id_here>",
+        "readings": [
+          {"sensor_type": "vibration_mm_s", "value": 12.5, "unit": "mm/s", "threshold_min": 0, "threshold_max": 7.1},
+          {"sensor_type": "temperature_c", "value": 96.0, "unit": "°C", "threshold_min": 0, "threshold_max": 85},
+          {"sensor_type": "oil_pressure_bar", "value": 1.8, "unit": "bar", "threshold_min": 2.5, "threshold_max": 7.0}
+        ]
+      },
+      "expected": "Should trigger CRITICAL alerts for multiple sensors"
+    }
+  ]
+}
